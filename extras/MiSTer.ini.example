@@ -1,0 +1,5 @@
+; Add this to /media/fat/MiSTer.ini (anywhere; it's its own section).
+; When the MegaLD core loads, MiSTer restarts itself as MiSTer_LD, the
+; Main that knows how to play LaserActive discs.
+[MegaLD]
+main=MiSTer_LD

@@ -1,0 +1,16 @@
+# Optional settings for the LaserActive player. To use them, copy this file
+# to /media/fat/laseractive.cfg. It is re-read every second while a disc is
+# loaded, so changes apply without restarting.
+
+# Fine position of the LaserDisc picture under the game's graphics, if a
+# game's overlay doesn't line up. video_x is in disc columns (fractions
+# allowed, negative = left), video_y in lines (negative = up).
+#video_x 0
+#video_y 0
+
+# Logging, for bug reports. The player always writes
+# /media/fat/laseractive.log; log_regs 1 also writes every PD6103A register
+# access to /media/fat/laseractive_pd6103a.log. log_reads 1 adds reads
+# (very busy; only when asked for).
+#log_regs 1
+#log_reads 1
