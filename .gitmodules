@@ -1,0 +1,8 @@
+[submodule "MegaCD_MiSTer"]
+	path = MegaCD_MiSTer
+	url = https://github.com/MukiEX/MegaCD_MiSTer.git
+	branch = laseractive-step1
+[submodule "Main_MiSTer"]
+	path = Main_MiSTer
+	url = https://github.com/MukiEX/Main_MiSTer.git
+	branch = laseractive-step1
