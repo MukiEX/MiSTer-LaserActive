@@ -62,6 +62,7 @@ fi
 make -s -C "$TOOLS" clean >>"$LOG" 2>&1 || true
 cp "$TOOLS/web/mmidsc.html" "$OUT/tools/mmidsc.html"
 cp "$TOOLS/README.md" "$OUT/tools/mmidsc-README.md"
+cp "$TOOLS/server/mmidsc_server.py" "$OUT/tools/mmidsc_server.py"
 
 # what's in it, and from which sources
 CORE_REV=$(git -C MegaCD_MiSTer rev-parse --short HEAD)
@@ -77,8 +78,9 @@ Copy everything in this folder to the root of your MiSTer's SD card
 1. Add the lines from MiSTer.ini.example to /media/fat/MiSTer.ini.
 2. Put the Sega PAC BIOS in games/MegaLD/boot.rom.
 3. Convert your .mmi disc images to .dscmmi with tools/mmidsc.html (open it
-   in Chrome or Edge) or tools/mmidsc-* on the command line, and put them in
-   games/MegaLD.
+   in Chrome or Edge), tools/mmidsc-* on the command line, or
+   tools/mmidsc_server.py (python3, no installs) on the machine that holds the
+   discs, and put them in games/MegaLD.
 4. Load MegaLD from the Console menu and pick a disc with Insert Disk.
 
 Files:
