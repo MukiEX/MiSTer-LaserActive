@@ -23,7 +23,17 @@ copy its contents to the root of the SD card, and:
    ```
    The stock MiSTer loads the MegaLD core and then hands over to
    `MiSTer_LD`, so your normal `MiSTer` binary stays untouched.
-2. Put the Sega PAC BIOS in `games/MegaLD/boot.rom`.
+2. Put the Sega PAC BIOS files in `games/MegaLD`, renamed:
+
+   | Rename this file (as it's usually found) | to | OSD choice |
+   |---|---|---|
+   | `Pioneer LaserActive Sega PAC Boot ROM v1.02 (1993)(Pioneer - Sega)(JP)(en-ja).bin` | `boot_jp.rom` | Japan |
+   | `Pioneer LaserActive Sega PAC Boot ROM v1.04 (1993)(Pioneer - Sega)(US).bin` | `boot_us.rom` | USA |
+   | `Pioneer LaserActive Sega PAC Boot ROM v1.02 (1993)(Pioneer - Sega)(US).bin` | `boot_us102.rom` | USA v1.02 |
+
+   You only need the regions you play. The checksums are in
+   `MegaCD_MiSTer/LaserActive.md`. A single `boot.rom` from 1.x still works
+   as a fallback.
 3. Load **MegaLD** from the Console menu and pick a disc with **Insert Disk**.
 
 ## Discs
@@ -41,15 +51,25 @@ Both write identical files. Keep your `.mmi`: the `.dscmmi` is a playback copy.
 
 ## OSD options
 
-- **LaserActive PD6103A**: the PAC (on by default in this core).
-- **LaserDisc Video**: Auto, or Hide for the plain Mega Drive picture.
-- **LaserDisc Fields**: Auto (what the game asks for, as the real hardware
-  does), or Both for full 480-line 480i.
-- **LaserDisc Field Order**: Normal or Reversed, for Both.
-- **Deinterlace (HDMI)**: Weave or Bob, for 480i over HDMI.
+- **LaserActive BIOS** (main page): Auto, Japan, USA or USA v1.02. Auto
+  follows the Region option if it's set, otherwise the disc's region (Japan
+  for discs made for both, or with no disc). Changing it restarts the machine
+  with the other BIOS.
+- Under **Audio & Video**:
+  - **LaserDisc Video**: Auto, or Hide for the plain Mega Drive picture.
+  - **LaserDisc Fields**: Auto (what the game asks for, as the real hardware
+    does), or Both for full 480-line 480i.
+  - **LaserDisc Field Order**: Normal or Reversed, for Both (the unofficial
+    Dragon's Lair port needs Reversed).
+  - **Deinterlace (HDMI)**: Weave or Bob, for 480i over HDMI.
 
-Analog/CRT output works at 15 kHz; the scandoubler is bypassed while the PAC
-is on.
+The PAC is always on, as on a real LaserActive. The disc-picture video path
+switches on by itself while a LaserDisc with video is in the drive; analog/CRT
+output then runs at 15 kHz, since that path bypasses the scandoubler. A plain
+Mega CD disc gets the normal video path.
+
+If MiSTer_LD ever crashes, `/media/fat/laseractive_crash.log` has a report;
+please include it (and `laseractive.log.1`) in bug reports.
 
 ## Building
 

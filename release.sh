@@ -76,7 +76,12 @@ Copy everything in this folder to the root of your MiSTer's SD card
 (/media/fat), then:
 
 1. Add the lines from MiSTer.ini.example to /media/fat/MiSTer.ini.
-2. Put the Sega PAC BIOS in games/MegaLD/boot.rom.
+2. Put the Sega PAC BIOS files in games/MegaLD, renamed:
+     Pioneer LaserActive Sega PAC Boot ROM v1.02 (1993)(Pioneer - Sega)(JP)(en-ja).bin -> boot_jp.rom
+     Pioneer LaserActive Sega PAC Boot ROM v1.04 (1993)(Pioneer - Sega)(US).bin        -> boot_us.rom
+     Pioneer LaserActive Sega PAC Boot ROM v1.02 (1993)(Pioneer - Sega)(US).bin        -> boot_us102.rom
+   (only the regions you play; a single boot.rom from 1.x still works).
+   Pick one in the OSD under LaserActive BIOS, or leave it on Auto.
 3. Convert your .mmi disc images to .dscmmi with tools/mmidsc.html (open it
    in Chrome or Edge), tools/mmidsc-* on the command line, or
    tools/mmidsc_server.py (python3, no installs) on the machine that holds the
